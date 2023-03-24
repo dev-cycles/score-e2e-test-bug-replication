@@ -1,6 +1,5 @@
 import * as assert from 'assert';
 import * as path from 'path';
-import * as util from 'node:util';
 // You can import and use all API from the 'vscode' module
 // as well as import your extension to test it
 import * as vscode from 'vscode';
@@ -30,7 +29,7 @@ suite('Hover Test Suits', () => {
 		const hoverTexts = hoverResults.map(h => (h.contents[0] as vscode.MarkdownString).value)
 
 		console.log(hoverTexts);
-		
+
 		assert.equal(hoverTexts.length, 2);
 		assert.match(hoverTexts[0], /activate/); // the typescript `activate` hover content should be first
 		assert.match(hoverTexts[1], /Hello/); // the 'hello' hover content should be last
