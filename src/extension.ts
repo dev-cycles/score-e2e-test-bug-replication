@@ -20,6 +20,16 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	context.subscriptions.push(disposable);
+
+	let hoverDisposable = vscode.languages.registerHoverProvider('*', {
+		provideHover(document, position, token) {
+			return {
+				contents: ['Hello! This should be at the bottom of the hover panel.']
+			}
+		}
+	});
+
+	context.subscriptions.push(hoverDisposable);
 }
 
 // This method is called when your extension is deactivated

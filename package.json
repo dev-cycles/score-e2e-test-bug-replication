@@ -7,9 +7,11 @@
     "vscode": "^1.76.0"
   },
   "categories": [
-    "Other"
+    
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:typescript"
+  ],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
